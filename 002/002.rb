@@ -1,9 +1,9 @@
 a, b = 1, 1
 fibs = []
 
-while a < 4000000 do
+while a < 4_000_000 do
   a, b = b, a + b
   fibs << a
 end
 
-puts fibs.reject { |x| x % 2 == 1 }.inject(0, &:+)
+puts fibs.select(&:even?).inject(0, &:+)
