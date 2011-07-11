@@ -9,4 +9,4 @@ def fifth_power(n)
   result
 end
 
-puts (2..1_000_000).inject(0) { |sum, e| sum += e if e == fifth_power(e); sum }
+puts (2..1_000_000).select {|e| e == fifth_power(e) }.inject(0, &:+)
