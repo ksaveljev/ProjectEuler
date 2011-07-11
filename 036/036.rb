@@ -1,9 +1,9 @@
-n = 1000000
-s = (1...n).inject(0) do |sum, elem|
-  if (elem.to_s == elem.to_s.reverse) && (elem.to_s(2) == elem.to_s(2).reverse)
-    sum + elem
-  else
-    sum
-  end
+def palindromic?(elem, base)
+  string = elem.to_s(base)
+  string == string.reverse
 end
-print s
+
+n = 1_000_000
+palindromes = (1...n).select{|elem| palindromic?(elem, 2) and palindromic?(elem, 10)}
+sum = palindromes.inject(0, &:+)
+print sum
