@@ -1,5 +1,4 @@
-triangle = []
-1.upto(10000) { |n| triangle << n * (n + 1) / 2 }
+triangle = Array.new(10_000) { |n| n * (n + 1) / 2 }
 
 def value(word)
   word.each_byte.inject(0) { |sum, b| sum += b - 64 }
