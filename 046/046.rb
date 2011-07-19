@@ -1,20 +1,13 @@
 require 'prime'
 
 class Integer
-  def prime_twice_square?
-    result = false
-    Prime.each(self) do |p|
-      next unless (self - p).even?
+  def square?
+    sqrt = Math.sqrt(self).to_i
+    sqrt * sqrt == self
+  end
 
-      tmp = (self - p) / 2
-      sq = Math.sqrt(tmp).to_i
-
-      if sq * sq == tmp
-        result = true
-        break
-      end
-    end
-    result
+ def prime_twice_square?
+    Prime.each(self).select(&:odd?).map{|p| (self-p)/2}.any?(&:square?)
   end
 end
 
