@@ -5,10 +5,7 @@ class Array
 
   def unusual_pandigital?
     d = 2, 3, 5, 7, 11, 13, 17
-    (1..7).each do |n|
-      return false unless self[n..n+2].to_int % d[n-1] == 0
-    end
-    true
+    (1..7).all? { |n| self[n..n+2].to_int % d[n-1] == 0 }
   end
 end
 
