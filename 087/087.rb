@@ -18,7 +18,4 @@ primes.each do |p_2|
   end
 end
 
-print set.size
-
-
-
+p set.size
