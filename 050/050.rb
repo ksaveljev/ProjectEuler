@@ -2,7 +2,7 @@ require 'prime'
 require 'set'
 
 primes = Prime.each(1_000_000).to_a
-primes_cache = primes.inject(Set.new) { |cache, prime| cache << prime }
+primes_cache = Set.new(primes)
 
 sz = primes.size
 consecutive_primes = []
