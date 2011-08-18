@@ -18,4 +18,4 @@ def d(n)
 end
 memoize :d
 
-print (1..18).map{|n| d(n)}.flatten.uniq.size
+p (1..18).map{|n| d(n)}.flatten.uniq.size

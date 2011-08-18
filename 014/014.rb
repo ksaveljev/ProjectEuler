@@ -12,4 +12,4 @@ def chain_length(start)
 end
 memoize :chain_length
 
-(1...1_000_000).max_by {|x| chain_length x}
+p (1...1_000_000).max_by {|x| chain_length x}
